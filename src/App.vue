@@ -1,28 +1,31 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <img-slide-check v-if="showImgSlideCheck" @success="checkSuccess()" @fail="checkFail"></img-slide-check>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  components:{
+    ImgSlideCheck:()=>import('./components/ImgSlideCheck.vue')
+  },
+  data(){
+    return {
+      showImgSlideCheck: true
+    }
+  },
+  methods:{
+    checkSuccess(){
+      alert('验证成功')
+      this.showImgSlideCheck = false
+    },
+    checkFail(){
+      alert('验证失败，请重试')
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
