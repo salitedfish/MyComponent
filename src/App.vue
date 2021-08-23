@@ -7,7 +7,7 @@
 <script>
 export default {
   components:{
-    ImgSlideCheck:()=>import('./components/ImgSlideCheck.vue')
+    ImgSlideCheck:()=>import('./components/滑动图片缺口验证.vue')
   },
   data(){
     return {
