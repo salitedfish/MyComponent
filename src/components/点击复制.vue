@@ -7,7 +7,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import ClipboardJS from "clipboard";
 
 export default {
