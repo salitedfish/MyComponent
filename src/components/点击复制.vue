@@ -2,7 +2,6 @@
   <div>
       <div ref="btn" @click="handleClickCopy(name)" class="copyBtn ml-1" >
          <img src="@/assets/icons/copy.png" class=" max-h-5" alt="" v-if="needCopy">
-            <!-- <app-icon name="icon-fuzhi" size="18px"></app-icon> -->
       </div>
   </div>
 </template>
