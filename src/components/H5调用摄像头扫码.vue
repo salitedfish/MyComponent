@@ -96,17 +96,7 @@ export default Vue.extend({
         context = canvas.getContext("2d"),
         _this = this;
       let timer = setInterval(function () {
-        context.drawImage(
-          video,
-          0,
-          0,
-          _this.cameraWidth,
-          _this.cameraHeight,
-          0,
-          0,
-          478,
-          850
-        );
+        context.drawImage( video, 0, 0, _this.cameraWidth, _this.cameraHeight, 0, 0, 478, 850 );
         // 扫码条形码
         let imgUri = canvas.toDataURL();
         _this.readBarcode(imgUri, timer);
@@ -123,7 +113,6 @@ export default Vue.extend({
           inputStream: {
             size: 1920,
           },
-
           locator: {
             patchSize: "medium",
             halfSample: false,
@@ -172,7 +161,6 @@ export default Vue.extend({
     },
   },
   mounted() {
-
     console.log(navigator, "show navigator");
     if (
       (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) ||
@@ -208,8 +196,6 @@ export default Vue.extend({
         },
       });
       }
-
-
     } else {
       //   alert("你的浏览器不支持访问用户媒体设备");
       this.$emit("onerror", "你的浏览器不支持访问用户媒体设备");
