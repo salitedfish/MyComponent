@@ -26,19 +26,34 @@ baseAxios.interceptors.response.use((res:AxiosResponse) => {
     return Promise.reject(err.response? err.response.data ? err.response.data.msg : err.response.statusText : '网络异常~')
 })
 
-const myAxios = (method:string, url:string, data?:unknown):Promise<void | any> => {
-    if(method == 'get' || method == 'GET'){
-        return baseAxios.get(url, { params: data}).then((res:unknown)=>{
-                    return res as any
-                }).catch((err)=>{
-                    message.error(err || '网络异常~')
-                })
+const myAxios = (method:string, url:string, data?:unknown, config?:any):Promise<void | ResponseType> => {
+    if(method.toUpperCase() == 'GET'){
+
+        return baseAxios.get(url, Object.assign({}, { params: data}, config)).then((res:unknown)=>{
+            return res as ResponseType
+        }).catch((err)=>{
+            message.error(err || '网络异常~')
+        })
+    }else if(method.toUpperCase() == 'POST') {
+        return baseAxios.post(url, data, config).then((res:unknown)=>{
+            return res as ResponseType
+        }).catch((err)=>{
+            message.error(err || '网络异常~')
+        })
+    }else if(method.toUpperCase() == 'DELETE') {
+        return baseAxios.delete(url, { data }).then((res:unknown)=>{
+            return res as ResponseType
+        }).catch((err)=>{
+            message.error(err || '网络异常~')
+        })
+    }else if(method.toUpperCase() == 'PUT'){
+        return baseAxios.put(url, data ).then((res:unknown)=>{
+            return res as ResponseType
+        }).catch((err)=>{
+            message.error(err || '网络异常~')
+        })
     }else {
-        return baseAxios.post(url, data).then((res:unknown)=>{
-                    return res as any
-                }).catch((err)=>{
-                    message.error(err || '网络异常~')
-                })
+        return Promise.reject('请求方法错误')
     }
 }
 
