@@ -5,11 +5,13 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "jest": "jest"
   },
   "dependencies": {
     "animejs": "^3.2.1",
     "core-js": "^3.6.5",
+    "jest": "^27.5.1",
     "scrollmagic": "^2.0.8",
     "vue": "^2.6.11"
   },
