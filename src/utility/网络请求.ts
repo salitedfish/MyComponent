@@ -47,7 +47,7 @@ function myAxios (method: 'POST' | 'PUT', url: string, params?: ParamsType, data
 function myAxios (method: string, url: string, params?: ParamsType, data?: unknown, config?: any, cancelSourceArray?: any[]): PromiseWithVoid<ResponseType> {
     /**如果有传递过来收集取消器的数组，那就收集取消器，一般用不到 */
     if(cancelSourceArray) {
-        const source = CancelToken.source()
+        const source: {token: any, cancel: (message: any) => void} = CancelToken.source()
         cancelSourceArray.push(source)
         config.CancelToken = source.token
     }
