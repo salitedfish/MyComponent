@@ -3,8 +3,8 @@
 export class MySocket {
     socket: WebSocket | undefined
     socketUrl: string
-    socketPingInterval: number
-    socketPongInterval: number
+    socketPingInterval: any
+    socketPongInterval: any
     pingPong: string
     constructor(socketUrl: string){
         this.socketPingInterval = 0
