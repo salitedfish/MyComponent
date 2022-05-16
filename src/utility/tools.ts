@@ -73,12 +73,3 @@ const b = ref<number>(a)
 
 a.value = 3
 b.value = 2
-
-function coo(a: number): string
-function coo(a: string): number
-function coo(a: number | string): number | string{
-    if(typeof a == 'string') {
-        return Number(a)
-    }
-}
-const cpp = coo(09)

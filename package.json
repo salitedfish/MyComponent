@@ -1,7 +1,6 @@
 {
-  "name": "newapp",
-  "version": "0.1.0",
-  "private": true,
+  "name": "gxk_npm_test",
+  "version": "1.0.0",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
