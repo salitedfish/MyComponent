@@ -8,6 +8,7 @@
     "jest": "jest"
   },
   "dependencies": {
+    "@vueuse/core": "^8.6.0",
     "animejs": "^3.2.1",
     "core-js": "^3.6.5",
     "jest": "^27.5.1",

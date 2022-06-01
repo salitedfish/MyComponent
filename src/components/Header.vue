@@ -5,33 +5,40 @@
         <m-global-icon icon="icon-v2-arrow-left" @click="handleBack" />
       </slot>
     </div>
+
     <div class="center">
       <slot name="center">{{ title }}</slot>
     </div>
+
     <div class="right">
       <slot name="right"></slot>
     </div>
   </div>
 </template>
 
-<script>
+<script lang="ts">
 /**框架*/
+import { defineComponent } from "vue";
 /**工具库*/
 /**类型*/
-/**组件*/
+/**网络请求*/
 /**自定义方法*/
+/**组件*/
 
-export default {
+export default defineComponent({
   name: "commonHeader",
   props: {
     title: {
       type: String,
     },
   },
-  methods: {
-    handleBack() {},
+  setup() {
+    const handleBack = () => {};
+    return {
+      handleBack,
+    };
   },
-};
+});
 </script>
 
 <style scoped lang="less">
@@ -45,8 +52,6 @@ export default {
   left: 0;
   right: 0;
   z-index: 99;
-  .left {
-  }
   .center {
     position: absolute;
     top: 50%;
@@ -54,8 +59,6 @@ export default {
     transform: translate(-50%, -50%);
     font-size: 16px;
     font-weight: 600;
-  }
-  .right {
   }
 }
 </style>
