@@ -11,6 +11,7 @@
     "@vueuse/core": "^8.6.0",
     "animejs": "^3.2.1",
     "core-js": "^3.6.5",
+    "gxkutil": "^1.0.0",
     "jest": "^27.5.1",
     "scrollmagic": "^2.0.8",
     "vue": "^2.6.11"
